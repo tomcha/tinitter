@@ -1,0 +1,16 @@
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: tinitter
+  pool: 5
+  username: tinitter_user
+  password: tinitter_pass
+  host: 127.0.0.1
+
+development:
+  adapter: sqlite3
+  database: db/sqlite.db
+
+test:
+  adapter: sqlite3
+  database: db/sqlite.test.db
