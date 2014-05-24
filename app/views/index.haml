@@ -1,0 +1,28 @@
+%div.postform
+  %h3
+    投稿フォーム
+    %form{ method: 'post', action: '/post/commit'}
+      %div.form-group
+        %label
+          ニックネーム
+          %em
+            （半角英数16文字まで）
+          %br
+        %input.form-control{ type: 'text', name: 'nickname', placeholder: 'ニックネームを入力して下さい'}
+      %div.form-group
+        %label
+          テキスト
+          %em
+            (1000文字まで)
+        %textarea.form-control{ name: 'body', placeholder: '本文を入力して下さい。'}
+      %input.btn.btn-primary.btn-block{ type: 'submit', value: '投稿する'}
+-@posts.each do |post|
+  %div.postcell
+    %div.body
+      #{post.body}
+    %div.info<>
+      post by
+      %span.nickname<>
+        #{post.nickname}
+      %span.date
+        #{post.created_at}

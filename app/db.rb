@@ -2,8 +2,8 @@ require 'active_record'
 require 'yaml'
 
 module DB
-  def self.connect(root_dir, rackenv)
-    databese_yml_path = File.join(root_dir, 'config', 'database.yaml')
+  def self.connect(root_dir, rack_env)
+    database_yml_path = File.join(root_dir, 'config', 'database.yaml')
     database_yml      = YAML.load_file(database_yml_path)
     connection_data   = database_yml[rack_env]
 
